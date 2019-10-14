@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org"
+      xmlns:layout="https://github.com/ultraq/thymeleaf-layout-dialect"
+      layout:decorate="layout">
+<head>
+    <title>Messages : Create</title>
+</head>
+<body>
+<h1 layout:fragment="header">Messages : Create</h1>
+<div layout:fragment="content" class="container">
+    <form id="messageForm" th:action="@{/(addCartItem)}"
+          th:object="${cartItem}"
+          action="#" method="post">
+
+       <label for="sku">Sku</label> <input type="text"
+                                                 th:field="*{sku}" />
+        <label for="qty">Qty</label>
+        <input th:field="*{qty}"></input>
+        <div class="form-actions">
+            <input type="submit" value="Save" />
+        </div>
+    </form>
+</div>
+</body>
+</html>

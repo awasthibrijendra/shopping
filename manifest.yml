@@ -1,0 +1,15 @@
+applications:
+  - name: shopping
+    instances: 1
+    memory: 700m
+    path: build/libs/shopping-0.0.1-SNAPSHOT.jar
+    buildpacks:
+      - java_buildpack
+    env:
+      product_service_url: ${vcap.services.product-user-provided-service.credentials.uri}/product
+      stock_service_url: ${vcap.services.brijendra-stock-user-provided.credentials.uri}/stock
+    services:
+      - product-user-provided-service
+      - brijendra-stock-user-provided
+    routes:
+      - route: brijendra-shopping.cfapps.io
