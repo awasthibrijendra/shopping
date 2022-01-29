@@ -2,6 +2,13 @@ plugins {
 	id 'org.springframework.boot' version '2.0.0.RELEASE'
 	id 'io.spring.dependency-management' version '1.0.8.RELEASE'
 	id 'java'
+	id "org.sonarqube" version "3.3"
+}
+
+sonarqube {
+  properties {
+    property "sonar.projectKey", "awasthibrijendra_shopping"
+  }
 }
 
 group = 'com.brijendra.product'
